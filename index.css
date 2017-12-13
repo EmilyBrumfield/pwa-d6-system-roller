@@ -1,0 +1,26 @@
+html {
+  height: 98%;
+  width: 99%;
+  font-size: 1vw;
+}
+
+
+body {
+  font-family: sans-serif;
+  height: 98%;
+  margin: 0;
+  padding: 0;
+  width: 99%;
+}
+
+.App-explanation {
+  background-color: lightgray;
+  text-align: left;
+}
+
+.DiceRoller-button {
+  font-size: 2vw;
+  height: 9vw;
+  text-align: center;
+  width: 9vw;
+}
