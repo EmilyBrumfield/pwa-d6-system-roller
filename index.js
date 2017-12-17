@@ -1,7 +1,10 @@
-/*SHADOWRUN ANARCHY DICE ROLLER
-Progressiva web app that rolls Shadowrun Anarchy dice without hassle or unnecessary clicks.
+//NOTE: Use toggle buttons for min and max; check to see what numbers of possible for those limits in the core game
+//Don't include extra limits; we're going for light over power
 
-Shadowrun Anarchy is a rules-light tabletop role-playing game. It often involves rolling large handfuls of dice and
+/*D6 DICE ROLLER
+Progressiva web app that rolls D6 system dice without hassle or unnecessary clicks.
+
+d6 system is a set of tabletop role-playing game rules. It often involves rolling large handfuls of dice and
 tallying results, so I made this little app to speed things up when gaming at the computer.
 
 When a user clicks a button, the app rolls the specified number of dice, applies min and max roll, and tallies the results for each die side.
@@ -10,22 +13,27 @@ Then it sums the results.
 The wild die doesn't contribute to successes; it's a six-sided die that causes a Bad Luck result on a 1, and Good Luck on 6.
 */
 
-var diceTally = 0; //will eventually use closures for this
-       
+var diceCap = 6; //stores the current dice cap
+
+
+function handleDiceCapClick(newCap) {
+  diceCap = newCap;
+  outputReplace("currentCap", "Dice Cap: " + diceCap)
+}
+    
 function handleRollClick(numDice) {
-    diceTally = rollDice(numDice);
+    
+  var diceTally = rollDice(numDice, diceCap);
     outputReplace("rollTotal", "Total Roll: " + diceTally[7])
     outputReplace("wildDie", "Wild Die Result: " + diceTally[8])
 
 }
       
-    function rollDice(numDice, minRoll, maxRoll) {
-      if (minRoll == null) {minRoll = 1}; //sets default if nothing entered for minroll
+    function rollDice(numDice, maxRoll) {
       if( maxRoll == null) {maxRoll = 6}; //sets default if nothing entered for maxRoll
             
-      //minRoll sets a minimum result per die; anything below that will be upgraded to the minimum, not rerolled
-      //maxRoll sets a maximum result per die; anything above that will be dowgraded to the maximum, not rerolled
-      //defaults to minRoll 1 and maxRoll 6
+      //maxRoll sets a maximum result per die; anything above that will be dowgraded to the maximum, not rerolled; used for dice caps in some games
+      //defaults maxRoll 6
 
 
         var currentRoll = 0;
@@ -55,7 +63,6 @@ function handleRollClick(numDice) {
         for (var i = 1; i <= numDice; i++){
             //roll dice here, tally results, do some other stuff
             currentRoll = Math.floor(Math.random() * 6) + 1;
-            if(currentRoll < minRoll) {currentRoll = minRoll}; //applies minimum roll
             if(currentRoll > maxRoll) {currentRoll = maxRoll}; //applies maximum roll
 
             tempResultsStorage[currentRoll] += 1;

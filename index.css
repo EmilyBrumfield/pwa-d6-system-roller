@@ -18,9 +18,20 @@ body {
   text-align: left;
 }
 
+.DiceCap-button {
+  background-color: lightblue;
+  border-radius: 25%;
+  font-size: 2vw;
+  height: 9vw;
+  margin-top: 0.5vw;
+  text-align: center;
+  width: 9vw;
+}
+
 .DiceRoller-button {
   font-size: 2vw;
   height: 9vw;
+  margin-top: 0.5vw;
   text-align: center;
   width: 9vw;
 }
