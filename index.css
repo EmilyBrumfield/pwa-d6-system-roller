@@ -14,8 +14,18 @@ body {
 }
 
 .App-explanation {
+  font-size: 2vw;
   background-color: lightgray;
   text-align: left;
+}
+
+
+.App-explanation-button {
+  font-size: 2vw;
+  height: 3vw;
+  margin-top: 0.5vw;
+  text-align: center;
+  width: 27vw;
 }
 
 .DiceCap-button {

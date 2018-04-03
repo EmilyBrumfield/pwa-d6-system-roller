@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="d6-system-roller.css">
+    <link rel="manifest" href="manifest.json">    
+    <script type="text/javascript" src="d6-system-roller.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta charset="utf-8">
+    <meta name="theme-color" content="#C0D890">
     <title>D6 Roller</title>
   </head>
   <body>
@@ -12,12 +14,9 @@
       You need to enable JavaScript to run this app.
     </noscript>
     
-    <p class="App-explanation">
-      Dice roller for the d6 System. This is a work in progress.
-      
-      <br /><b>Instructions:</b> Click the button with the number of dice to roll. 
-      <br /><b>House Rule:</b> The wild die is separate from the normal die pool and doesn't add to the total.
-      </p>
+
+    <button class="App-explanation-button" onClick="handleInstructionClick()">Instructions</button>
+    <p class="App-explanation" id="instructions"></p>
 
       <h1 id="rollTotal">Total Roll:</h1>
       <h1 id="wildDie">Wild Die Result:</h1>
@@ -52,6 +51,8 @@
       <button class="DiceCap-button" onClick='handleDiceCapClick(4)'>Cap 4</button>
       <button class="DiceCap-button" onClick='handleDiceCapClick(5)'>Cap 5</button>
       <button class="DiceCap-button" onClick='handleDiceCapClick(6)'>Cap 6</button>
+  
+      
 
   </body>
 </html>
