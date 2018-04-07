@@ -26,12 +26,14 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open('d6roller').then(cache => {
       return cache.addAll([
+/*
         `/`,
         `/index.html?timestamp=${timeStamp}`,
         `/index.css?timestamp=${timeStamp}`,
         `/index.js?timestamp=${timeStamp}`,
         `/genericIcon.ico?timestamp=${timeStamp}`,
         `/placeholderIcon.ico?timestamp=${timeStamp}`,
+*/
       ])
           .then(() => self.skipWaiting());
     })
